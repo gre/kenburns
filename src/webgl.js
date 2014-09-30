@@ -2,15 +2,13 @@
 // WebGL implementation
 
 var vertexShaderSource = ""+
-"uniform vec2 res;"+ // canvas size
 "uniform vec2 imgRes;"+ // image size
 "uniform vec2 pos;"+ // bound position
 "uniform vec2 dim;"+ // bound size
 "attribute vec2 p;"+
 "varying vec2 uv;"+
 "void main() {"+
-  "uv = (p * vec2(1.0, -1.0)+1.0)/2.0;"+
-  "uv = pos/imgRes + uv * (dim/imgRes);"+
+  "uv = pos/imgRes + ((p * vec2(1.0, -1.0)+1.0)/2.0) * (dim/imgRes);"+
   "gl_Position = vec4(p, 0.0, 1.0);"+
 "}";
 var fragmentShaderSource = ""+
@@ -45,7 +43,6 @@ function KenBurnsWebGLTrait (canvas) {
   gl.useProgram(program);
 
   var positionLocation = gl.getAttribLocation(program, "p");
-  this.resL = gl.getUniformLocation(program, "res");
   this.imgResL = gl.getUniformLocation(program, "imgRes");
   this.posL = gl.getUniformLocation(program, "pos");
   this.dimL = gl.getUniformLocation(program, "dim");
@@ -72,7 +69,6 @@ KenBurnsWebGLTrait.prototype = {
     gl.useProgram(this.program);
 
     gl.uniform2f(this.imgResL, image.width, image.height);
-    gl.uniform2f(this.resL, canvas.width, canvas.height);
 
     var texture = this.texture = gl.createTexture();
     gl.bindTexture(gl.TEXTURE_2D, texture);
