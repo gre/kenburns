@@ -8,7 +8,7 @@ API
 The general API looks like this:
 
 ```javascript
-var kenBurns = KenBurns.forCanvas(canvas);
+var kenBurns = new KenBurns.Canvas(canvas);
 var promise = kenBurns.run(image, fromBound, toBound, duration, easing);
 promise.then(...).then(...)...;
 ```

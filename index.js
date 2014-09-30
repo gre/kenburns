@@ -2,11 +2,6 @@ var Q = require("q");
 var requestAnimationFrame = require("raf");
 var now = require("performance-now");
 
-function extend (dest, from) {
-  for (var k in from) dest[k] = from[k];
-  return dest;
-}
-
 function identity (x) {
   return x;
 }
@@ -82,27 +77,42 @@ KenBurns.prototype = {
 
 // Canvas 2D implementation
 
-function KenBurnsCanvas2d (canvas2d) {
-  KenBurns.call(this);
+function KenBurnsCanvas2dTrait (canvas2d) {
   this.canvas = canvas2d;
   this.ctx = canvas2d.getContext("2d");
 }
-KenBurnsCanvas2d.prototype = extend({
+KenBurnsCanvas2dTrait.prototype = {
   draw: function (image, bound) {
     this.canvas.width = this.canvas.width;
     var params = [ image ].concat(bound).concat([ 0, 0, this.canvas.width, this.canvas.height ]);
     this.ctx.drawImage.apply(this.ctx, params);
   }
-}, KenBurns.prototype);
+};
 
+
+function extend (obj) {
+  var source, prop;
+  for (var i = 1, length = arguments.length; i < length; i++) {
+    source = arguments[i];
+    for (prop in source) {
+      if (source.hasOwnProperty(prop)) {
+        obj[prop] = source[prop];
+      }
+    }
+  }
+  return obj;
+}
 
 function mixin (Clazz) {
-
+  function Mixin () {
+    KenBurns.call(this);
+    Clazz.apply(this, arguments);
+  }
+  Mixin.prototype = extend({}, KenBurns.prototype, Clazz.prototype);
+  return Mixin;
 }
 
 module.exports = {
-  forCanvas: function (canvas) {
-    return new KenBurnsCanvas2d(canvas);
-  },
+  Canvas: mixin(KenBurnsCanvas2dTrait),
   mixin: mixin
 };

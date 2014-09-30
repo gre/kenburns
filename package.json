@@ -1,6 +1,6 @@
 {
   "name": "kenburns",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Ken Burns Effect implementation",
   "main": "index.js",
   "scripts": {

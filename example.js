@@ -6,7 +6,7 @@ canvas.width = 600;
 canvas.height = 400;
 document.body.appendChild(canvas);
 
-var kenBurns = KenBurns.forCanvas(canvas);
+var kenBurns = new KenBurns.Canvas(canvas);
 
 var images = [ "http://i.imgur.com/YTq74uc.jpg", "http://i.imgur.com/6YSZBTf.jpg" ];
 
