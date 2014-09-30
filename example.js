@@ -1,4 +1,4 @@
-var KenBurns = require("./index");
+var KenBurns = require(".");
 var Qimage = require("qimage");
 
 var canvas = document.createElement("canvas");

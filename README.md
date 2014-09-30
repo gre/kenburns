@@ -15,7 +15,8 @@ promise.then(...).then(...)...;
 
 **The first line creates a KenBurns object from a Canvas.**
 
-> **N.B.:** Current implementation is only using Canvas2D so you must give a Canvas and initialize it to a dimension (see example.js).
+> N.B.: a `new KenBurns.Canvas` will try to use WebGL implementation and fallback on Canvas2D implementation if not supported.
+You can explicitely use a `new KenBurns.Canvas2D` or a `new KenBurns.WebGL`.
 
 **Then we start an animation with `kenBurns.run`.**
 Here, you can easily customize the KenBurns effect with the different parameters:

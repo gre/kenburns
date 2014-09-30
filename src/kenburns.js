@@ -6,6 +6,8 @@ function identity (x) {
   return x;
 }
 
+function noop (){}
+
 function interpolate (a, b, p) {
   return a * (1-p) + b * p;
 }
@@ -31,7 +33,13 @@ KenBurnsAbortedError.prototype.name = "KenBurnsAbortedError";
 function KenBurns () {
   this.animationDefer = null;
 }
+
 KenBurns.prototype = {
+  // Can be overrided by implementations
+  runStart: noop,
+  runEnd: noop,
+  destroy: noop,
+
   /**
    * a CropBound is an [x, y, width, height] array describing the area to crop in pixels.
    * 
@@ -44,6 +52,9 @@ KenBurns.prototype = {
     var self = this;
     var start = now();
     var d = Q.defer();
+
+    self.runStart.apply(self, arguments);
+    d.promise.then(self.runEnd.bind(self)).done();
     self.animationDefer = d;
     (function render () {
       if (self.animationDefer !== d) return;
@@ -75,44 +86,4 @@ KenBurns.prototype = {
   }
 };
 
-// Canvas 2D implementation
-
-function KenBurnsCanvas2dTrait (canvas2d) {
-  this.canvas = canvas2d;
-  this.ctx = canvas2d.getContext("2d");
-}
-KenBurnsCanvas2dTrait.prototype = {
-  draw: function (image, bound) {
-    this.canvas.width = this.canvas.width;
-    var params = [ image ].concat(bound).concat([ 0, 0, this.canvas.width, this.canvas.height ]);
-    this.ctx.drawImage.apply(this.ctx, params);
-  }
-};
-
-
-function extend (obj) {
-  var source, prop;
-  for (var i = 1, length = arguments.length; i < length; i++) {
-    source = arguments[i];
-    for (prop in source) {
-      if (source.hasOwnProperty(prop)) {
-        obj[prop] = source[prop];
-      }
-    }
-  }
-  return obj;
-}
-
-function mixin (Clazz) {
-  function Mixin () {
-    KenBurns.call(this);
-    Clazz.apply(this, arguments);
-  }
-  Mixin.prototype = extend({}, KenBurns.prototype, Clazz.prototype);
-  return Mixin;
-}
-
-module.exports = {
-  Canvas: mixin(KenBurnsCanvas2dTrait),
-  mixin: mixin
-};
+module.exports = KenBurns;
