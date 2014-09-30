@@ -1,0 +1,30 @@
+{
+  "name": "kenburns",
+  "version": "0.0.0",
+  "description": "Ken Burns Effect implementation",
+  "main": "index.js",
+  "scripts": {
+    "example": "beefy example.js --live"
+  },
+  "author": "Gaëtan Renaudeau <renaudeau.gaetan@gmail.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/gre/kenburns"
+  },
+  "bugs": {
+    "url": "https://github.com/gre/kenburns/issues"
+  },
+  "homepage": "https://github.com/gre/kenburns",
+  "dependencies": {
+    "now": "^0.8.1",
+    "performance-now": "^0.2.0",
+    "q": "^1.0.1",
+    "raf": "^2.0.3"
+  },
+  "devDependencies": {
+    "beefy": "^2.1.1",
+    "qimage": "^1.2.0",
+    "watchify": "^1.0.6"
+  }
+}
