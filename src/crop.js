@@ -1,3 +1,5 @@
+var clampedBound = require("./clampedBound");
+
 /**
  * Compute an absolute CropBound from relative parameters:
  * - zoom: a value in range ]0,1] which describe the crop zoom ratio. 1 is the full image size.
@@ -26,12 +28,12 @@ function crop (zoom, center) {
       (imageRatio / maxRatio) * image.height * zoom
     ];
 
-    return [
+    return clampedBound([
       Math.round(image.width * center[0] - zoomedCanvasSize[0] / 2),
       Math.round(image.height * center[1] - zoomedCanvasSize[1] / 2),
       Math.round(zoomedCanvasSize[0]),
       Math.round(zoomedCanvasSize[1])
-    ];
+    ], image.width, image.height);
   };
 }
 
