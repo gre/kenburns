@@ -42,15 +42,21 @@ function KenBurnsWebGLTrait (canvas) {
   gl.linkProgram(program);
   gl.useProgram(program);
 
-  var positionLocation = gl.getAttribLocation(program, "p");
+  this.positionLocation = gl.getAttribLocation(program, "p");
   this.imgResL = gl.getUniformLocation(program, "imgRes");
   this.posL = gl.getUniformLocation(program, "pos");
   this.dimL = gl.getUniformLocation(program, "dim");
+  this.buffer = gl.createBuffer();
+}
+KenBurnsWebGLTrait.prototype = {
+  runStart: function (image) {
+    var gl = this.gl;
+    var canvas = this.canvas;
+    gl.useProgram(this.program);
 
-  var buffer = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+  gl.bindBuffer(gl.ARRAY_BUFFER, this.buffer);
   gl.bufferData(
-      gl.ARRAY_BUFFER, 
+      gl.ARRAY_BUFFER,
       new Float32Array([
         -1.0, -1.0, 
         1.0, -1.0, 
@@ -59,20 +65,18 @@ function KenBurnsWebGLTrait (canvas) {
         1.0, -1.0, 
         1.0,  1.0]), 
       gl.STATIC_DRAW);
-  gl.enableVertexAttribArray(positionLocation);
-  gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
-}
-KenBurnsWebGLTrait.prototype = {
-  runStart: function (image) {
-    var gl = this.gl;
-    var canvas = this.canvas;
-    gl.useProgram(this.program);
+
+    var positionLocation = this.positionLocation;
+    gl.enableVertexAttribArray(positionLocation);
+    gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
 
     gl.uniform2f(this.imgResL, image.width, image.height);
 
     var texture = this.texture = gl.createTexture();
+    gl.activeTexture(gl.TEXTURE0);
     gl.bindTexture(gl.TEXTURE_2D, texture);
 
+    gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
@@ -90,6 +94,7 @@ KenBurnsWebGLTrait.prototype = {
     gl.drawArrays(gl.TRIANGLES, 0, 6);
   },
   destroy: function () {
+    this.gl.deleteBuffer(this.buffer);
     this.gl.deleteProgram(this.program);
   },
   getViewport: function () {
