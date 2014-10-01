@@ -91,6 +91,9 @@ KenBurnsWebGLTrait.prototype = {
   },
   destroy: function () {
     this.gl.deleteProgram(this.program);
+  },
+  getViewport: function () {
+    return this.canvas;
   }
 };
 

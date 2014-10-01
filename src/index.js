@@ -1,6 +1,7 @@
 var KenBurns = require("./kenburns");
 var KenBurnsCanvas2dTrait = require("./canvas2d");
 var KenBurnsWebGLTrait = require("./webgl");
+var crop = require("./crop");
 
 function extend (obj) {
   var source, prop;
@@ -29,6 +30,7 @@ function webglSupported () {
 }
 
 var Module = module.exports = {
+  crop: crop,
   mixin: mixin,
   Canvas2D: mixin(KenBurnsCanvas2dTrait),
   WebGL: mixin(KenBurnsWebGLTrait),

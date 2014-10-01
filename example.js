@@ -2,21 +2,17 @@ var KenBurns = require(".");
 var Qimage = require("qimage");
 
 var canvas = document.createElement("canvas");
-canvas.width = 600;
+canvas.width = 400;
 canvas.height = 400;
 document.body.appendChild(canvas);
 
 var kenBurns = new KenBurns.Canvas(canvas);
 
-var images = [ "http://i.imgur.com/YTq74uc.jpg", "http://i.imgur.com/6YSZBTf.jpg" ];
+var images = [ "http://i.imgur.com/6YSZBTf.jpg", "http://i.imgur.com/YTq74uc.jpg" ];
 
-Qimage.anonymously(images[1])
-  .then(function (img) {
-    return kenBurns.run(img, [950, 650, 2*600, 2*400], [0, 0, img.width, img.height], 4000);
-  })
+Qimage.anonymously(images[0])
+  .then(kenBurns.runPartial(KenBurns.crop(0.2), KenBurns.crop(1.0), 4000))
   .delay(1000) // Here we could do a transition e.g; with GLSL Transitions :-)
-  .thenResolve(Qimage.anonymously(images[0]))
-  .then(function (img) {
-    return kenBurns.run(img, [0, 1200, 4*600, 4*400], [1600, 1600, 1*600, 1*400], 4000, function (x) { return x * x; });
-  })
+  .thenResolve(Qimage.anonymously(images[1]))
+  .then(kenBurns.runPartial(KenBurns.crop.largest, KenBurns.crop(0.2, [3250/4200, 780/2800]), 4000, function (x) { return x * x; }))
   .done();

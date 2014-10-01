@@ -1,7 +1,15 @@
 {
   "name": "kenburns",
-  "version": "0.2.0",
-  "description": "Ken Burns Effect implementation",
+  "version": "0.3.0",
+  "description": "Ken Burns Effect – panning and zooming animation on an image.",
+  "keywords": [
+    "kenburns",
+    "crop",
+    "panning",
+    "zooming",
+    "animation",
+    "browser"
+  ],
   "main": "src/index.js",
   "scripts": {
     "example": "beefy example.js --live"

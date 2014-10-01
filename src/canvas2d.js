@@ -10,6 +10,9 @@ KenBurnsCanvas2dTrait.prototype = {
     this.canvas.width = this.canvas.width;
     var params = [ image ].concat(bound).concat([ 0, 0, this.canvas.width, this.canvas.height ]);
     this.ctx.drawImage.apply(this.ctx, params);
+  },
+  getViewport: function () {
+    return this.canvas;
   }
 };
 
