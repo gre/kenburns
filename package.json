@@ -12,7 +12,8 @@
   ],
   "main": "src/index.js",
   "scripts": {
-    "example": "beefy example.js --live"
+    "example": "beefy example.js --live",
+    "wikipediaexample": "beefy wikipediaexample --live"
   },
   "author": "Gaëtan Renaudeau <renaudeau.gaetan@gmail.com>",
   "license": "ISC",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "beefy": "^2.1.1",
+    "glsl-transition": "^0.6.6",
     "qimage": "^1.2.0",
     "watchify": "^1.0.6"
   }

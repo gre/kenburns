@@ -1,7 +1,7 @@
 var Q = require("q");
 var requestAnimationFrame = require("raf");
 var now = require("performance-now");
-var clampedBound = require("./clampedBound");
+var clampBound = require("./clampBound");
 
 // KenBurns abstract implementation.
 // abstract functions to implement:
@@ -10,6 +10,8 @@ var clampedBound = require("./clampedBound");
 
 function KenBurns () {
   this.animationDefer = null;
+  this.clamped = true;
+  this.rgb = [ 0, 0, 0 ]; // in percentage convention
 }
 
 KenBurns.prototype = {
@@ -17,6 +19,33 @@ KenBurns.prototype = {
   runStart: noop,
   runEnd: noop,
   destroy: noop,
+
+  getBound: function (cropBound, image) {
+    var bnds = typeof cropBound === "function" ? cropBound(this.getViewport(), image) : cropBound;
+    if (this.clamped) bnds = clampBound(bnds, image.width, image.height);
+    return bnds;
+  },
+
+  setClamped: function (c) {
+    this.clamped = c;
+    return this;
+  },
+
+  setRGB: function (rgb) {
+    this.rgb = rgb;
+    return this;
+  },
+
+  /**
+   * Draw the image one time.
+   */
+  one: function (image, crop) {
+    var boundCrop = this.getBound(crop, image);
+    this.runStart(image, boundCrop, boundCrop, 0);
+    this.draw(image, boundCrop);
+    this.runEnd();
+    return image;
+  },
 
   /**
    * The Ken Burns Effect will animate image from fromCropBound to toCropBound with a given duration and easing function.
@@ -31,8 +60,8 @@ KenBurns.prototype = {
     var self = this;
     var start = now();
     var d = Q.defer();
-    var fromCropBound = typeof startCrop === "function" ? startCrop(this.getViewport(), image) : startCrop;
-    var toCropBound = typeof endCrop === "function" ? endCrop(this.getViewport(), image) : endCrop;
+    var fromCropBound = this.getBound(startCrop, image);
+    var toCropBound = this.getBound(endCrop, image);
 
     var startEndCropReason = "startCrop and endCrop are required and must be a bound array or a function returning a bound array.";
 
@@ -48,7 +77,8 @@ KenBurns.prototype = {
       if (self.animationDefer !== d) return;
       try {
         var p = Math.min((now() - start) / duration, 1);
-        var bound = clampedBound(interpolateBound(fromCropBound, toCropBound, easing(p)), image.width, image.height);
+        var bound = interpolateBound(fromCropBound, toCropBound, easing(p));
+        if (self.clamped) bound = clampBound(bound, image.width, image.height);
         if (p < 1) {
           requestAnimationFrame(render);
         }
@@ -66,6 +96,12 @@ KenBurns.prototype = {
     return d.promise;
   },
 
+  onePartial: function (crop) {
+    var self = this;
+    return function (image) {
+      return self.one(image, crop);
+    };
+  },
   runPartial: function (startCrop, endCrop, duration, easing) {
     var self = this;
     return function (image) {
@@ -100,7 +136,7 @@ function interpolate (a, b, p) {
 function interpolateBound (a, b, p) {
   var bound = [];
   for (var i=0; i<4; ++i)
-    bound[i] = ~~(interpolate(a[i], b[i], p));
+    bound[i] = interpolate(a[i], b[i], p);
   return bound;
 }
 
