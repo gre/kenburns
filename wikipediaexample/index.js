@@ -4,10 +4,9 @@ var Qimage = require("qimage");
 var GlslTransition = require("glsl-transition");
 var BezierEasing = require("bezier-easing");
 
-// create the DOM
+// Create the DOM
 
-var div = document.createElement("div");
-document.body.appendChild(div);
+var container = document.body;
 var canvasTransition = createCanvas();
 var canvas1 = createCanvas();
 var canvas2 = createCanvas();
@@ -62,7 +61,7 @@ Q.all([
   .delay(4000)
   .then(function () {
     display(canvasTransition);
-    kenBurns1.one(images[0], robertSteps[1]); // Flush the canvas1 for Firefox..
+    kenBurns1.one(images[0], robertSteps[1]); // Flush the canvas1 – workaround for a Firefox bug
     return Q.all([
       kenBurns2.setClamped(false).run(images[1], georgeSteps[0], georgeSteps[1], 6000, BezierEasing(0, 0, 0.5, 1)),
       fade({ from: canvas1, to: canvas2 }, 2000).then(displayF(canvas2))
@@ -85,7 +84,7 @@ Q.all([
   .delay(5000)
   .then(function () {
     display(canvasTransition);
-    kenBurns1.one(images[2], battleSteps[5]); // Flush the canvas1 for Firefox..
+    kenBurns1.one(images[2], battleSteps[5]); // Flush the canvas1 – workaround for a Firefox bug
     return fade({ from: canvas1, to: images[3] }, 2000);
   })
   .thenResolve(images[3])
@@ -100,9 +99,9 @@ Q.all([
 // DOM utilities
 
 function display (elt) {
-  var child = div.children[0];
-  if (child) div.removeChild(child);
-  div.appendChild(elt);
+  var child = container.children[0];
+  if (child) container.removeChild(child);
+  container.appendChild(elt);
 }
 
 function displayF (elt) {
