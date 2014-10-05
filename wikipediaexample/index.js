@@ -4,38 +4,13 @@ var Qimage = require("qimage");
 var GlslTransition = require("glsl-transition");
 var BezierEasing = require("bezier-easing");
 
-var W = 640;
-var H = 480;
-
 // create the DOM
 
 var div = document.createElement("div");
 document.body.appendChild(div);
-
-function display (elt) {
-  var child = div.children[0];
-  if (child) div.removeChild(child);
-  div.appendChild(elt);
-}
-
-function displayF (elt) {
-  return function (o) {
-    display(elt);
-    return o;
-  };
-}
-
-var canvasTransition = document.createElement("canvas");
-canvasTransition.width = W;
-canvasTransition.height = H;
-
-var canvas1 = document.createElement("canvas");
-canvas1.width = W;
-canvas1.height = H;
-
-var canvas2 = document.createElement("canvas");
-canvas2.width = W;
-canvas2.height = H;
+var canvasTransition = createCanvas();
+var canvas1 = createCanvas();
+var canvas2 = createCanvas();
 
 // Create a fade transition and 2 ken burns effects engine.
 
@@ -121,3 +96,26 @@ Q.all([
   ;
 })
 .done();
+
+// DOM utilities
+
+function display (elt) {
+  var child = div.children[0];
+  if (child) div.removeChild(child);
+  div.appendChild(elt);
+}
+
+function displayF (elt) {
+  return function (o) {
+    display(elt);
+    return o;
+  };
+}
+
+function createCanvas () {
+  var canvas = document.createElement("canvas");
+  canvas.width = 640;
+  canvas.height = 480;
+  return canvas;
+}
+
