@@ -1,8 +1,8 @@
 var KenBurns = require("./kenburns");
 var KenBurnsCanvas2dTrait = require("./canvas2d");
 var KenBurnsWebGLTrait = require("./webgl");
-var crop = require("./crop");
-var clampBound = require("./clampBound");
+var rectCrop = require("rect-crop");
+var rectClamp = require("rect-clamp");
 
 function extend (obj) {
   var source, prop;
@@ -27,8 +27,8 @@ function mixin (Clazz) {
 }
 
 var Module = module.exports = {
-  crop: crop,
-  clampBound: clampBound,
+  crop: rectCrop,
+  clamp: rectClamp,
   mixin: mixin,
   Canvas2D: mixin(KenBurnsCanvas2dTrait),
   WebGL: mixin(KenBurnsWebGLTrait),

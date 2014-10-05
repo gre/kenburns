@@ -29,7 +29,10 @@
     "now": "^0.8.1",
     "performance-now": "^0.2.0",
     "q": "^1.0.1",
-    "raf": "^2.0.3"
+    "raf": "^2.0.3",
+    "rect-clamp": "0.0.0",
+    "rect-crop": "0.0.0",
+    "rect-mix": "0.0.0"
   },
   "devDependencies": {
     "beefy": "^2.1.1",

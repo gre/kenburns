@@ -20,6 +20,9 @@ KenBurnsCanvas2dTrait.prototype = {
 };
 
 function normalizeDrawingParams (bound, viewport) {
+  // TODO implement for Firefox (more restrictive on out of bounds)
+  // TODO rounding?
+  // TODO external module
   var params = bound.concat(viewport);
   /*
   if (params[0] < 0) {

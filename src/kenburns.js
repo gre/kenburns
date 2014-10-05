@@ -1,7 +1,8 @@
 var Q = require("q");
 var requestAnimationFrame = require("raf");
 var now = require("performance-now");
-var clampBound = require("./clampBound");
+var rectClamp = require("rect-clamp");
+var rectMix = require("rect-mix");
 
 // KenBurns abstract implementation.
 // abstract functions to implement:
@@ -22,7 +23,7 @@ KenBurns.prototype = {
 
   getBound: function (cropBound, image) {
     var bnds = typeof cropBound === "function" ? cropBound(this.getViewport(), image) : cropBound;
-    if (this.clamped) bnds = clampBound(bnds, image.width, image.height);
+    if (this.clamped) bnds = rectClamp(bnds, [ 0, 0, image.width, image.height ]);
     return bnds;
   },
 
@@ -77,8 +78,8 @@ KenBurns.prototype = {
       if (self.animationDefer !== d) return;
       try {
         var p = Math.min((now() - start) / duration, 1);
-        var bound = interpolateBound(fromCropBound, toCropBound, easing(p));
-        if (self.clamped) bound = clampBound(bound, image.width, image.height);
+        var bound = rectMix(fromCropBound, toCropBound, easing(p));
+        if (self.clamped) bound = rectClamp(bound, [ 0, 0, image.width, image.height ]);
         if (p < 1) {
           requestAnimationFrame(render);
         }
@@ -127,17 +128,6 @@ function noop (){}
 function invalidArgument (value, reason) {
   console.error(value, "<- "+reason);
   throw new Error(reason);
-}
-
-function interpolate (a, b, p) {
-  return a * (1-p) + b * p;
-}
-
-function interpolateBound (a, b, p) {
-  var bound = [];
-  for (var i=0; i<4; ++i)
-    bound[i] = interpolate(a[i], b[i], p);
-  return bound;
 }
 
 function KenBurnsAbortedError (message) {

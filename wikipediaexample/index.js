@@ -6,7 +6,8 @@ var BezierEasing = require("bezier-easing");
 
 // Create the DOM
 
-var container = document.body;
+var container = document.createElement("div");
+document.body.appendChild(container);
 var canvasTransition = createCanvas();
 var canvas1 = createCanvas();
 var canvas2 = createCanvas();
