@@ -26,10 +26,6 @@ function mixin (Clazz) {
   return Mixin;
 }
 
-function webglSupported () {
-  return !!document.createElement("canvas").getContext("webgl");
-}
-
 var Module = module.exports = {
   crop: crop,
   clampBound: clampBound,
@@ -38,7 +34,7 @@ var Module = module.exports = {
   WebGL: mixin(KenBurnsWebGLTrait),
   Canvas: function (canvas) {
     // Auto Detect what to use
-    if (webglSupported())
+    if (!!window.WebGLRenderingContext)
       return new Module.WebGL(canvas);
     else
       return new Module.Canvas2D(canvas);
