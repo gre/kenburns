@@ -36,7 +36,7 @@ For the best customization, the use of [Bezier-Easing](https://npmjs.org/package
 **Finally, the returned value of run is a Promise** which allows you to chain multiple KenBurns
 or any other effects (like [glsl-transition](https://npmjs.org/package/glsl-transition) for instance).
 
-Utility to compute the CropBound
+Utility to compute the Cropping Rectangle
 ---
 
 Because it is not easy to give an absolute crop bound for the `startCrop` and `endCrop`,
