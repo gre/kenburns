@@ -3,6 +3,7 @@
 **kenburns** provides a [Ken Burns Effect](https://en.wikipedia.org/wiki/Ken_Burns_effect) on an image.
 
 Kenburns has implementations for **Canvas 2D**, **Canvas WebGL**, and **DOM** !
+You can directly use `kenburns-dom`, `kenburns-canvas2d` or `kenburns-webgl` if you target only one and prefer less dependencies.
 
 API
 ---
