@@ -2,13 +2,15 @@
 
 **kenburns** provides a [Ken Burns Effect](https://en.wikipedia.org/wiki/Ken_Burns_effect) on an image.
 
+Kenburns has implementations for **Canvas 2D**, **Canvas WebGL**, and **DOM** !
+
 API
 ---
 
 The general API looks like this:
 
 ```javascript
-var kenBurns = new KenBurns.Canvas(canvas);
+var kenBurns = new KenBurns.Canvas(canvas); // or new KenBurns.DOM(div);
 var promise = kenBurns.run(image, startCrop, endCrop, duration, easing);
 promise.then(...).then(...)...;
 ```
