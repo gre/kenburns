@@ -10,7 +10,7 @@
     "animation",
     "browser"
   ],
-  "main": "src/index.js",
+  "main": "index.js",
   "author": "Gaëtan Renaudeau <renaudeau.gaetan@gmail.com>",
   "license": "ISC",
   "repository": {
@@ -22,12 +22,10 @@
   },
   "homepage": "https://github.com/gre/kenburns",
   "dependencies": {
-    "draw-image-normalized": "0.1.0",
-    "performance-now": "0.2.0",
-    "q": "1.0.1",
-    "raf": "2.0.4",
-    "rect-clamp": "0.0.0",
-    "rect-crop": "0.0.0",
-    "rect-mix": "0.0.0"
+    "kenburns-core": "1.0.x",
+    "kenburns-canvas2d": "1.0.x",
+    "kenburns-webgl": "1.0.x",
+    "rect-clamp": "0.0.x",
+    "rect-crop": "0.0.x"
   }
 }
