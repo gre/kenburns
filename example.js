@@ -5,8 +5,15 @@ var canvas = document.createElement("canvas");
 canvas.width = 400;
 canvas.height = 400;
 document.body.appendChild(canvas);
-
 var kenBurns = new KenBurns.Canvas(canvas);
+
+/*
+var div = document.createElement("div");
+div.style.width = "400px";
+div.style.height = "400px";
+document.body.appendChild(div);
+var kenBurns = new KenBurns.DOM(div);
+*/
 
 var images = [ "http://i.imgur.com/6YSZBTf.jpg", "http://i.imgur.com/YTq74uc.jpg" ];
 

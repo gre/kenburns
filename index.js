@@ -1,6 +1,7 @@
 var KenBurnsCore = require("kenburns-core");
 var KenBurnsCanvas2D = require("kenburns-canvas2d");
 var KenBurnsWebGL = require("kenburns-webgl");
+var KenBurnsDOM = require("kenburns-dom");
 var rectCrop = require("rect-crop");
 var rectClamp = require("rect-clamp");
 
@@ -10,6 +11,7 @@ var Module = module.exports = {
   mixin: KenBurnsCore.mixin,
   Canvas2D: KenBurnsCanvas2D,
   WebGL: KenBurnsWebGL,
+  DOM: KenBurnsDOM,
   Canvas: function (canvas) {
     // Auto Detect what to use
     if (!!window.WebGLRenderingContext)

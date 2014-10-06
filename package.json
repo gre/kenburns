@@ -23,6 +23,7 @@
   "homepage": "https://github.com/gre/kenburns",
   "dependencies": {
     "kenburns-core": "1.0.x",
+    "kenburns-dom": "1.0.x",
     "kenburns-canvas2d": "1.0.x",
     "kenburns-webgl": "1.0.x",
     "rect-clamp": "0.0.x",
