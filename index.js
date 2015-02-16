@@ -9,9 +9,9 @@ var Module = module.exports = {
   crop: rectCrop,
   clamp: rectClamp,
   mixin: KenBurnsCore.mixin,
-  Canvas2D: KenBurnsCanvas2D,
-  WebGL: KenBurnsWebGL,
-  DOM: KenBurnsDOM,
+  Canvas2D: KenBurnsCore.mixin(KenBurnsCanvas2D),
+  WebGL: KenBurnsCore.mixin(KenBurnsWebGL),
+  DOM: KenBurnsCore.mixin(KenBurnsDOM),
   Canvas: function (canvas) {
     // Auto Detect what to use
     if (!!window.WebGLRenderingContext)
