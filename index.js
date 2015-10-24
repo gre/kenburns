@@ -11,12 +11,7 @@ var Module = module.exports = {
   mixin: KenBurnsCore.mixin,
   Canvas2D: KenBurnsCore.mixin(KenBurnsCanvas2D),
   WebGL: KenBurnsCore.mixin(KenBurnsWebGL),
-  DOM: KenBurnsCore.mixin(KenBurnsDOM),
-  Canvas: function (canvas) {
-    // Auto Detect what to use
-    if (!!window.WebGLRenderingContext)
-      return new KenBurnsWebGL(canvas);
-    else
-      return new KenBurnsCanvas2D(canvas);
-  }
+  DOM: KenBurnsCore.mixin(KenBurnsDOM)
 };
+
+Module.Canvas = !!window.WebGLRenderingContext ? Module.WebGL : Module.Canvas2D;

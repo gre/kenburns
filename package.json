@@ -28,5 +28,8 @@
     "kenburns-webgl": "1.1.x",
     "rect-clamp": "0.0.x",
     "rect-crop": "0.0.x"
+  },
+  "devDependencies": {
+    "qimage": "^1.3.0"
   }
 }
