@@ -5,7 +5,8 @@
   "main": "advanced.js",
   "scripts": {
     "start": "budo index.js:bundle.js -w -- -t babelify",
-    "build": "NODE_ENV=production browserify index.js -t babelify | uglifyjs --compress --mangle > bundle.js"
+    "build": "NODE_ENV=production browserify index.js -t babelify | uglifyjs --compress --mangle > bundle.js",
+    "deploy": "surge -p . -d kenburns.surge.sh"
   },
   "author": "",
   "license": "ISC",

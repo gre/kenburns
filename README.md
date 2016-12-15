@@ -62,4 +62,7 @@ image.onload = () => {
 
 There is also `KenBurnsWebGL` (WebGL implementation) and `KenBurnsCanvas2D` (Canvas2D implementation).
 
-## [Example](example)
+## Example
+
+- [source code](example)
+- [website](http://kenburns.surge.sh/)

@@ -114,26 +114,3 @@ container.appendChild(title("KenBurnsCanvas2D"));
 container.appendChild(canvas2d);
 container.appendChild(title("KenBurnsWebGL"));
 container.appendChild(canvasWebGL);
-
-
-
-
-import KenBurnsDOM from "kenburns/lib/DOM";
-import rectCrop from "rect-crop";
-import bezierEasing from "bezier-easing";
-const image = new Image();
-image.src = "http://i.imgur.com/Uw2EQEk.jpg";
-image.onload = () => {
-  var div = document.createElement("div");
-  document.body.appendChild(div);
-  div.style.width = "400px";
-  div.style.height = "400px";
-  var kenBurns = new KenBurnsDOM(div);
-  kenBurns.animate(
-    image,
-    rectCrop(0.4, [0.15, 0.38]),
-    rectCrop.largest,
-    5000,
-    bezierEasing(0.6, 0.0, 1.0, 1.0)
-  );
-};
