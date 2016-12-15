@@ -8,7 +8,7 @@ Kenburns currently have implementations for **Canvas 2D**, **Canvas WebGL**, and
 npm install --save kenburns
 ```
 
-or [**standalone version**](https://unpkg.com/kenburns@latest/kenburns.js).
+or [**standalone version** (`window.KenBurns`)](https://unpkg.com/kenburns@latest/kenburns.js).
 
 ## Usage
 

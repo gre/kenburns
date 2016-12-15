@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest",
     "gendoc": "documentation build -o API.md -f md src/* --section=API -g -c documentation.yml",
-    "compile": "rm -rf lib/ && flow-copy-source src lib && babel --source-maps -d lib src && browserify lib/index.js --standalone Kenburns > kenburns.js",
+    "compile": "rm -rf lib/ && flow-copy-source src lib && babel --source-maps -d lib src && browserify lib/index.js --standalone KenBurns > kenburns.js",
     "prepublish": "npm run compile"
   },
   "dependencies": {
