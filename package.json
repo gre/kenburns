@@ -21,7 +21,8 @@
     "README.md",
     "LICENSE",
     "src",
-    "lib"
+    "lib",
+    "kenburns.js"
   ],
   "description": "Ken Burns Effect – panning and zooming animation on an image.",
   "keywords": [
