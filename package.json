@@ -1,6 +1,28 @@
 {
   "name": "kenburns",
   "version": "1.1.2",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest",
+    "gendoc": "documentation build -o API.md -f md src/* --section=API -g -c documentation.yml",
+    "compile": "rm -rf lib/ && flow-copy-source src lib && babel --source-maps -d lib src && browserify lib/index.js --standalone Kenburns > kenburns.js",
+    "prepublish": "npm run compile"
+  },
+  "dependencies": {
+    "draw-image-normalized": "0.1.x",
+    "gl-shader": "^4.2.1",
+    "invariant": "^2.2.2",
+    "raf": "^3.3.0",
+    "rect-clamp": "0.0.x",
+    "rect-crop": "0.0.x",
+    "rect-mix": "0.0.x"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "src",
+    "lib"
+  ],
   "description": "Ken Burns Effect – panning and zooming animation on an image.",
   "keywords": [
     "kenburns",
@@ -10,7 +32,6 @@
     "animation",
     "browser"
   ],
-  "main": "index.js",
   "author": "Gaëtan Renaudeau <renaudeau.gaetan@gmail.com>",
   "license": "ISC",
   "repository": {
@@ -21,15 +42,18 @@
     "url": "https://github.com/gre/kenburns/issues"
   },
   "homepage": "https://github.com/gre/kenburns",
-  "dependencies": {
-    "kenburns-core": "1.0.x",
-    "kenburns-dom": "1.1.x",
-    "kenburns-canvas2d": "1.1.x",
-    "kenburns-webgl": "1.1.x",
-    "rect-clamp": "0.0.x",
-    "rect-crop": "0.0.x"
-  },
   "devDependencies": {
-    "qimage": "^1.3.0"
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.1",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-flow": "^1.0.0",
+    "babel-preset-stage-1": "^6.16.0",
+    "browserify": "^13.1.1",
+    "documentation": "^4.0.0-beta16",
+    "eslint": "^3.12.1",
+    "eslint-plugin-flowtype": "^2.29.1",
+    "flow-bin": "^0.37.0",
+    "flow-copy-source": "^1.1.0",
+    "jest": "^17.0.3"
   }
 }

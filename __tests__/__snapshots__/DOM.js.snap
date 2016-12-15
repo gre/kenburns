@@ -1,0 +1,689 @@
+exports[`test .animate() 1`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "overflow",
+  "_importants": Object {
+    "height": undefined,
+    "overflow": undefined,
+    "position": undefined,
+    "width": undefined,
+  },
+  "_length": 4,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "300px",
+    "overflow": "hidden",
+    "position": "relative",
+    "width": "400px",
+  },
+}
+`;
+
+exports[`test .animate() 2`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "400px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "900px",
+  },
+  "transform": "scale(3.7500) translate(-396.67px,-160.00px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test .animateStep() 1`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "100px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(20.0000) translate(-40.00px,-42.50px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test .animateStep() 2`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "100px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(14.2857) translate(-36.00px,-39.50px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test .animateStep() 3`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "100px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(11.1111) translate(-32.00px,-36.50px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test .animateStep() 4`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "100px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(9.0909) translate(-28.00px,-33.50px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test .animateStep() 5`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "100px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(7.6923) translate(-24.00px,-30.50px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test .animateStep() 6`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "100px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(6.6667) translate(-20.00px,-27.50px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test .animateStep() 7`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "100px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(5.8824) translate(-16.00px,-24.50px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test .animateStep() 8`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "100px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(5.2632) translate(-12.00px,-21.50px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test .animateStep() 9`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "100px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(4.7619) translate(-8.00px,-18.50px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test .animateStep() 10`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "100px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(4.3478) translate(-4.00px,-15.50px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test .animateStep() 11`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "100px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(4.0000) translate(-0.00px,-12.50px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test background & clamped 1`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "800px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(40.0000) translate(5.00px,3.75px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test background & clamped 2`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "800px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(21.0526) translate(4.50px,-32.88px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test background & clamped 3`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "800px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(14.2857) translate(4.00px,-69.50px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test background & clamped 4`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "800px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(10.8108) translate(3.50px,-106.13px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test background & clamped 5`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "800px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(8.6957) translate(3.00px,-142.75px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test background & clamped 6`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "800px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(7.2727) translate(2.50px,-179.38px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test background & clamped 7`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "800px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(6.2500) translate(2.00px,-216.00px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test background & clamped 8`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "800px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(5.4795) translate(1.50px,-252.62px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test background & clamped 9`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "800px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(4.8780) translate(1.00px,-289.25px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test background & clamped 10`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "800px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(4.3956) translate(0.50px,-325.87px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
+
+exports[`test background & clamped 11`] = `
+CSSStyleDeclaration {
+  "0": "width",
+  "1": "height",
+  "2": "position",
+  "3": "top",
+  "4": "left",
+  "_importants": Object {
+    "height": undefined,
+    "left": undefined,
+    "position": undefined,
+    "top": undefined,
+    "width": undefined,
+  },
+  "_length": 5,
+  "_onChange": [Function],
+  "_values": Object {
+    "height": "800px",
+    "left": "0px",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100px",
+  },
+  "transform": "scale(4.0000) translate(0.00px,-362.50px) translateZ(0)",
+  "transformOrigin": "0% 0%",
+  "willChange": "transform",
+}
+`;
