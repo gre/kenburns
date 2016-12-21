@@ -53,7 +53,13 @@ export default class KenBurnsDOM extends KenBurnsBase<Source> {
       this.container.innerHTML = "";
       this.container.appendChild(source);
       source.style.position = "absolute";
+
       source.style.willChange = "transform"; // already supported by some browsers, ensures GPU acceleration
+      source.style.outline = "1px solid transparent";         // improves edges
+      source.style.backfaceVisibility = 'hidden';             // "
+      source.style['-webkit-backface-visibility'] = 'hidden'; // "
+      source.style.boxShadow = '0 0 1px rgba(255,255,255,0)'; // "
+
       source.style.top = "0px";
       source.style.left = "0px";
       source.style.transformOrigin = "0% 0%";
