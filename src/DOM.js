@@ -55,10 +55,12 @@ export default class KenBurnsDOM extends KenBurnsBase<Source> {
       source.style.position = "absolute";
 
       source.style.willChange = "transform"; // already supported by some browsers, ensures GPU acceleration
-      source.style.outline = "1px solid transparent";         // improves edges
-      source.style.backfaceVisibility = 'hidden';             // "
-      source.style['-webkit-backface-visibility'] = 'hidden'; // "
-      source.style.boxShadow = '0 0 1px rgba(255,255,255,0)'; // "
+     
+      // improves edge rendering (http://stackoverflow.com/questions/6492027/css-transform-jagged-edges-in-chrome):
+      source.style.outline = "1px solid transparent";
+      source.style.backfaceVisibility = "hidden";
+      source.style.WebkitBackfaceVisibility = "hidden";
+      source.style.boxShadow = "0 0 1px rgba(255,255,255,0)";
 
       source.style.top = "0px";
       source.style.left = "0px";
